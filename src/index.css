@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* New Color Palette */
+  --color-blush-pink: #ff9eb5;
+  /* Reddish Pink */
+  --color-gold: #d4af37;
+  --color-lavender: #f3e5f5;
+  --color-ivory: #fdfbf7;
+  /* Pale White */
+  --color-rose-gold: #e05263;
+  /* Deeper Reddish Pink */
+  --color-peach: #ffdab9;
+  --color-dark-text: #2d1b2e;
+  /* Darker text for contrast */
+
+  --font-royal: "Great Vibes", cursive;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-scroll: scroll 20s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Custom Utilities */
+.glass-card {
+  @apply bg-white/20 backdrop-blur-xl border border-white/40 shadow-2xl;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728];
+}
+
+.neon-heart {
+  filter: drop-shadow(0 0 10px #e05263);
+}
+
+.text-shadow-perfect {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mask-gradient-sides {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+body {
+  @apply bg-ivory text-dark-text font-sans overflow-x-hidden;
+}
